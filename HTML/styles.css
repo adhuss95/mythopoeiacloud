@@ -1,0 +1,16 @@
+body {
+	background-color:powderblue;
+	font-family:verdana;
+	text-size:150%;
+	text-align: center;
+}
+h2 {
+	color:blue;
+	font-family:courier;
+	text-size:100%;
+	
+}
+
+p {
+	color:red;
+}

@@ -1,0 +1,69 @@
+INTORDUCTION CODE TO HTML:
+Start of any code must be like this:
+
+
+<!DOCTYPE html>                 ** Assignning the code as HTML**
+<html>				**html open
+<head>				**heading of the page
+<title>Page Title</title>
+</head>
+<body>
+
+<h6>This is a Heading</h6>
+<p>This is a paragraph.</p>
+
+</body>
+</html>
+
+** Anythiung you open must be closed after designing that particular attribute.
+for closing : /head: / must be used to close.
+
+Elements definition:
+
+
+    The <!DOCTYPE html> declaration defines this document to be HTML5
+    The <html> element is the root element of an HTML page
+    The <head> element contains meta information about the document
+    The <title> element specifies a title for the document
+    The <body> element contains the visible page content
+    The <h1> element defines a large heading
+    The <p> element defines a paragraph
+
+HTML TAGS:
+
+Syntax: <tagname>content goes here...</tagname>
+
+The first tag in a pair is the start tag, the second tag is the end tag
+The end tag is written like the start tag, but with a forward slash inserted before the tag name 
+
+HTML LINKS:
+
+HTML links are defined with the <a> tag:
+ <a href="https://www.w3schools.com">This is a link</a> 
+
+The link's destination is specified in the href attribute. 
+Attributes are used to provide additional information about HTML elements.
+
+HTML IMAGES:
+
+HTML images are defined with the <img> tag.
+
+The source file (src), alternative text (alt), width, and height are provided as attributes:
+
+HTML TEXT FORMATTING:
+
+
+    <b> - Bold text
+    <strong> - Important text
+    <i> - Italic text
+    <em> - Emphasized text
+    <mark> - Marked text
+    <small> - Small text
+    <del> - Deleted text
+    <ins> - Inserted text
+    <sub> - Subscript text
+    <sup> - Superscript text
+
+
+
+
