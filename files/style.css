@@ -1,0 +1,54 @@
+@import url(https://fonts.googleapis.com/css?family=Cinzel Decorative);
+
+body{
+
+	font-family:"Cinzel";
+
+	background-image: url(west.jpg);
+	height:auto;
+	color:white;
+	background-size:cover;
+	background-position:center;
+}
+.Login-page{
+	width: 350px;
+	padding: 10px 15px 10px;
+	margin: 400px 50px 250px 800px;
+	position:center;
+
+}
+.form{
+	position:relative;
+	z-index: 1;
+	max-width: 300px;
+	padding:5px;
+	box-sizing: border-box;
+	
+	text-align:center;
+
+}
+.form input{
+font-family: "Times New Roman";
+height:1px;
+border-radius: 2px;
+font-size: 16px;
+
+background:white;
+border: 1px solid black;
+width: 100%;
+
+padding: 25px;
+
+
+}
+
+.form button{
+	font-family: "Verdana";
+	font-size: 16px;
+	width:280px;
+	height:5%;
+	padding:5px;
+	background-color:green;
+	color:white;
+
+}
