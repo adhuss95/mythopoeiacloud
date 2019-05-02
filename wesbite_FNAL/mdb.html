@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Template</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="mdb.css">
+ 
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script src="mdb.js"></script>
+
+</head>
+
+<body>
+
+
+
+  <header>
+    <div class="dropdown">
+    <button class="dropbtn" onclick="drpdown()"> Welcome AGL
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content" id="myDropdown">
+      <a href="#">January</a>
+      <a href="#">February</a>
+      <a href="#">March</a> 
+    </div>
+  </div>
+
+    <h2>MHL Cloud</h2>
+
+    <button class="tablink" onclick="openPage('Movie', this, 'orange')">Movies</button>
+    <button class="tablink" onclick="openPage('Apps', this, 'cyan')">Apps</button>
+    <button class="tablink" onclick="openPage('Music', this, 'green')">Music</button>
+    <button class="tablink" onclick="openPage('Magazine', this, 'blue')">Magazine</button>
+
+  </header>
+
+ <!--  <section>
+    <nav>
+      <ul>
+        
+        <li><a href="#">January</a></li>
+        <li><a href="#">February</a></li>
+        <li><a href="#">March</a></li>
+      </ul>
+    </nav>
+  </section> -->
+
+  <article>
+    <div class="contenttab" id="Movie">
+
+
+      <form id="form1" class="kolby" align="left" name="reg" method="get" action="http://www.imdb.com/find">
+        <input type="text" id="name" placeholder="Movie Name">
+        <input type="text" id="genre" placeholder="Genre">
+        <input type="number" id="duration" placeholder="Duration">
+        <input type="text" id="format" placeholder="Format">
+        <select id="list_all" type="button" onclick="multipleFunc()" placeholder="Languages">
+          <option selected value="English">Eng</option>
+          <option value="Spanish">Spa</option>
+          <option value="French">Fre</option>
+        </select>
+        <input type="text" id="sy_eng" placeholder="Synopsis_eng">
+        <input type="text" id="sy_fre" placeholder="Synopsis_fren">
+        <input type="text" id="director" placeholder="Director">
+        <input type="text" id="actor" placeholder="Actor">
+        <input type="button" class="add-row-movie" value="Add Row" style="float:right">
+      </form>
+
+      <button type="button" class="add-column" onclick="addColumn()" style="float:right">Add column</button>  
+      <button type="button" class="delete-column" onclick="deleteColumn()" style="float:right">Delete col</button>
+      <button type="button" class="delete-row-movie" style="float:right">Delete Row</button>
+    
+
+
+      <table id="table1" align="center">
+        <thead>
+
+          <tr>
+            <th>Movie Name-Eng</th>
+            <th>Movie Name-Dan</th>
+            <th>Movie Name-Glndic</th>
+            <th>File Name</th>
+            <th>Format</th>
+            <th>Language-Eng</th>
+            <th>Language-Dan</th>
+            <th>Genre-Eng</th>
+            <th>Genre-Dan</th>
+            <th>Genre-Glndic</th>
+            <th>Duration</th>
+            <th>Rating</th>
+            <th>Director</th>
+            <th>Cast</th>
+            <th>Synopsis_Eng</th>
+            <th>Synopsis_Dan</th>
+            <th>Synopsis_Glndic</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <!-- <tr>
+              <td><input type="checkbox" name="record"></td>
+              <td>Peter Parker</td>
+              <td>peterparker@mail.com</td>
+            </tr> -->
+
+        </tbody>
+      </table>
+      
+      
+<button type="button" class="save-row-movie" style="float:right">Submit</button>
+
+    </div>
+
+    
+  </article>
+
+  
+
+</body>
+
+</html>
+
+<script>
+
+  function drpdown() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+
+$(document).ready(function(){
+    $.getJSON("movies.json", function(data){
+      var fulldata = " ";
+      $.each(data,function(key,value){
+        fulldata += "<tr>";
+        fulldata += "<td>" + value.MOVIE_TITLE_ENG + "</td>";
+         fulldata += "<td>" + value.MOVIE_TITLE_DAN + "</td>";
+          fulldata += "<td>" + value.MOVIE_TITLE_greenlandic + "</td>";
+          fulldata += "<td>" + value.FILE_NAME + "</td>";
+          fulldata += "<td>" + value.FORMAT + "</td>";
+          fulldata += "<td>" + value.LANGUAGE_OPTIONS_ENG + "</td>";
+          fulldata += "<td>" + value.LANGUAGE_OPTIONS_DAN + "</td>";
+          fulldata += "<td>" + value.GENRE_ENG + "</td>";
+          fulldata += "<td>" + value.GENRE_DAN + "</td>";
+          fulldata += "<td>" + value.GENRE_greenlandic + "</td>";
+          fulldata += "<td>" + value.DURATION + "</td>";
+          fulldata += "<td>" + value.RATING + "</td>";
+          fulldata += "<td>" + value.DIRECTOR + "</td>";
+          fulldata += "<td>" + value.CAST + "</td>";
+          fulldata += "<td>" + value.SYNOPSIS_ENG + "</td>";
+          fulldata += "<td>" + value.SYNOPSIS_DAN + "</td>";
+          fulldata += "<td>" + value.SYNOPSIS_greenlandic + "</td>";
+          fulldata += "</tr>";
+      }); 
+      $("#table1").append(fulldata);
+    });
+  });
+</script>

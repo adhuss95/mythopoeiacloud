@@ -90,12 +90,7 @@ input:focus, select:focus, textarea:focus {
   -o-box-shadow: none !important;
   -ms-box-shadow: none !important; }
 
-input[type=checkbox] {
-  appearance: checkbox !important;
-  -moz-appearance: checkbox !important;
-  -webkit-appearance: checkbox !important;
-  -o-appearance: checkbox !important;
-  -ms-appearance: checkbox !important; }
+ 
 
 input[type=radio] {
   appearance: radio !important;
@@ -137,7 +132,7 @@ body {
   color: #222;
   font-weight: 400;
   font-family: 'Montserrat';
-  background-image: url("https://webdesignerdepot.s3.amazonaws.com/default-images/25.jpg");
+  background-image: url("https://cdn.pixabay.com/photo/2015/01/14/18/41/home-office-599475_960_720.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   -moz-background-size: cover;
@@ -158,7 +153,7 @@ body {
   -webkit-justify-content: space-between;
   -o-justify-content: space-between;
   -ms-justify-content: space-between;
-  align-items: center;
+  align-items: left;
   -moz-align-items: center;
   -webkit-align-items: center;
   -o-align-items: center;
@@ -187,8 +182,8 @@ body {
   -ms-transform: translate(-50%, -50%); }
 
 .signup-content {
-  background: #fff;
-  border-radius: 10px;
+  background: #00ff00;
+  border-radius: 100px;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   -o-border-radius: 10px;
@@ -261,7 +256,7 @@ body {
   -ms-border-radius: 5px;
   padding: 17px 20px;
   box-sizing: border-box;
-  font-size: 14px;
+  font-size: 24px;
   font-weight: 700;
   color: #fff;
   text-transform: uppercase;
